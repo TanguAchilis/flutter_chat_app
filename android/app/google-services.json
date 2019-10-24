@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "161485020406",
+    "firebase_url": "https://shopping-ef212.firebaseio.com",
+    "project_id": "shopping-ef212",
+    "storage_bucket": "shopping-ef212.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161485020406:android:8a37116a47234cba2220d7",
+        "android_client_info": {
+          "package_name": "co.appbrewery.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161485020406-5pk3r82dni1abk9la77s2sgjhgtmcej0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE3dypmMoixVhUl83jBqAqxr-yhrHzafM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161485020406-5pk3r82dni1abk9la77s2sgjhgtmcej0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
