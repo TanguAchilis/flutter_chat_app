@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flash_chat/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 final _firestore=Firestore.instance;
- FirebaseUser loggedInUser;
+FirebaseUser loggedInUser;
 
 class ChatScreen extends StatefulWidget {
   static String id='chat_screen';
@@ -69,7 +70,7 @@ class _ChatScreenState extends State<ChatScreen> {
               onPressed: () {
                 //Implement logout functionality
                 _auth.signOut();
-                Navigator.pop(context);
+                Navigator.pushNamed(context,LoginScreen.id);
               }),
         ],
         title: Text('⚡️Chat'),
@@ -98,13 +99,21 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                   FlatButton(
-                    onPressed: () {
+                    onPressed: () async{
                       messageTextController.clear();
                       //Implement send functionality. this is how to send datat to the cloud firestore
-                      _firestore.collection('Messages').add({
-                        'text':messageText,
-                        'sender':loggedInUser
-                      });
+                      try{
+                        await _firestore.collection('Messages').add({
+                          'sender':loggedInUser.email,
+                          'text':messageText,
+                        });
+                      }
+                      catch(e){
+                        print(e);
+                      }
+                      
+                        
+                    
                     },
                     child: Text(
                       'Send',
